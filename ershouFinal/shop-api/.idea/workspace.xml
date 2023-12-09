@@ -4,199 +4,85 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95398d17-09f1-4d12-aece-1537660ae1e4" name="Default Changelist" comment="最后一舞" />
+    <list default="true" id="37c7bc00-f4be-41ec-a26a-454ca021a18a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/itmk/status/StatusCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/itmk/status/StatusCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/itmk/utils/ResultUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/itmk/utils/ResultUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/itmk/utils/ResultVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/itmk/utils/ResultVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/itmk/web/goods/entity/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/itmk/web/goods/entity/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/itmk/web/goods_cart/controller/GoodsCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/itmk/web/goods_cart/controller/GoodsCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/itmk/web/goods_order/controller/GoodsOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/itmk/web/goods_order/controller/GoodsOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/itmk/web/goods_order/entity/GoodsOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/itmk/web/goods_order/entity/GoodsOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application-test.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="AnnotationType" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../Environment/apache-maven-3.6.3" />
-        <option name="userSettingsFile" value="D:\Environment\apache-maven-3.6.3\conf\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;associatedIndex&quot;: 8
 }</component>
-  <component name="ProjectId" id="2RoaK7FCOzLpK9ew6UBviBZ3kYM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2YvwV2vjwlgDpLejPXU7myzXQdG" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
-    <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Desktop/ershouFinal/shop-api&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;2567a5ec9705eb7ac2c984033e06189d&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
-    ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Program Files/Java/jdk-1.8",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PayMoney\ershou\shop-api\web\src\main\resources\mapper" />
-      <recent name="D:\PayMoney\ershou\shop-api\web\src\main\java\com\itmk\web\goods_evaluate" />
-      <recent name="D:\PayMoney\ershou\shop-api\web\src\main\java\com\itmk\web\goods_cart" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="ShopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <option name="DEBUG_MODE" value="true" />
-      <module name="web" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.itmk.ShopApplication" />
-      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MavenRunConfiguration" />
+      </set>
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SpringBootOptions">
-    <option name="showAdditionalConfigNotification" value="false" />
-  </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="95398d17-09f1-4d12-aece-1537660ae1e4" name="Default Changelist" comment="" />
-      <created>1687918820737</created>
+      <changelist id="37c7bc00-f4be-41ec-a26a-454ca021a18a" name="Changes" comment="" />
+      <created>1701419383091</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1687918820737</updated>
-      <workItem from="1687918822307" duration="1787000" />
-      <workItem from="1688035593362" duration="139000" />
-      <workItem from="1688118862460" duration="2279000" />
-      <workItem from="1688219782959" duration="2599000" />
-      <workItem from="1688260098561" duration="1581000" />
-      <workItem from="1688349405396" duration="10000" />
-      <workItem from="1689163395995" duration="597000" />
-      <workItem from="1689210002696" duration="9767000" />
-      <workItem from="1689293957231" duration="13087000" />
-      <workItem from="1689386242445" duration="7599000" />
-      <workItem from="1689554599158" duration="3378000" />
-      <workItem from="1689641782335" duration="12189000" />
-      <workItem from="1689730640629" duration="3555000" />
-      <workItem from="1689744998415" duration="6828000" />
-      <workItem from="1689816396475" duration="6617000" />
-      <workItem from="1690030042157" duration="43000" />
-      <workItem from="1691069203349" duration="2828000" />
-      <workItem from="1691118029487" duration="662000" />
-      <workItem from="1691201591579" duration="4428000" />
-      <workItem from="1691391617792" duration="44000" />
-      <workItem from="1691408478704" duration="598000" />
-      <workItem from="1691460681614" duration="11700000" />
-      <workItem from="1691720626094" duration="1250000" />
-      <workItem from="1691738228513" duration="6085000" />
-      <workItem from="1691824201471" duration="10189000" />
-      <workItem from="1691909069543" duration="2514000" />
-      <workItem from="1691916781412" duration="2817000" />
-      <workItem from="1691998779951" duration="1000" />
-      <workItem from="1692005319160" duration="166000" />
-      <workItem from="1692109178128" duration="126000" />
-      <workItem from="1692873003939" duration="27000" />
-      <workItem from="1692873946251" duration="4237000" />
-      <workItem from="1692922663457" duration="634000" />
-      <workItem from="1692928199186" duration="4183000" />
-      <workItem from="1693058220857" duration="26000" />
-      <workItem from="1693101207431" duration="4051000" />
-      <workItem from="1693121838936" duration="9329000" />
-      <workItem from="1693149834892" duration="289000" />
-      <workItem from="1693182373573" duration="21000" />
-      <workItem from="1693357852696" duration="1177000" />
-      <workItem from="1693364623057" duration="25000" />
-      <workItem from="1693369079493" duration="953000" />
-      <workItem from="1693453915009" duration="106000" />
-      <workItem from="1700908180570" duration="9336000" />
-      <workItem from="1700963851217" duration="22397000" />
-      <workItem from="1701081348598" duration="5706000" />
-      <workItem from="1701171886619" duration="2388000" />
-      <workItem from="1701343563746" duration="2038000" />
-      <workItem from="1701351200185" duration="167000" />
-      <workItem from="1701353955461" duration="2367000" />
-      <workItem from="1701391536454" duration="1695000" />
-      <workItem from="1701406530980" duration="6347000" />
-      <workItem from="1701427729343" duration="90000" />
-      <workItem from="1701430058247" duration="2577000" />
-      <workItem from="1701585532575" duration="135000" />
-      <workItem from="1701587332720" duration="27000" />
+      <updated>1701419383091</updated>
+      <workItem from="1701419385169" duration="3751000" />
+      <workItem from="1701430042139" duration="730000" />
+      <workItem from="1701430792677" duration="473000" />
+      <workItem from="1701431280221" duration="240000" />
+      <workItem from="1701431534851" duration="4162000" />
+      <workItem from="1701436106065" duration="155000" />
+      <workItem from="1701436267749" duration="20000" />
+      <workItem from="1701436295297" duration="98000" />
+      <workItem from="1701436428825" duration="3059000" />
     </task>
-    <task id="LOCAL-00001" summary="first init version">
-      <option name="closed" value="true" />
-      <created>1700911466828</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1700911466828</updated>
-    </task>
-    <task id="LOCAL-00002" summary="first init version">
-      <option name="closed" value="true" />
-      <created>1700911472688</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1700911472688</updated>
-    </task>
-    <task id="LOCAL-00003" summary="first init version">
-      <option name="closed" value="true" />
-      <created>1701081403528</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1701081403528</updated>
-    </task>
-    <task id="LOCAL-00004" summary="最后一舞">
-      <option name="closed" value="true" />
-      <created>1701351062621</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1701351062621</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="first init version" />
-    <MESSAGE value="最后一舞" />
-    <option name="LAST_COMMIT_MESSAGE" value="最后一舞" />
   </component>
 </project>
