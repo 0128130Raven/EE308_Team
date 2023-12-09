@@ -262,7 +262,7 @@ const _sfc_main = {
           prop: "image",
           label: "图片:"
         }),
-        H: common_vendor.sr(imgRef, "a6b06614-21,a6b06614-0", {
+        H: common_vendor.sr(imgRef, "6fae5696-21,6fae5696-0", {
           "k": "imgRef"
         }),
         I: common_vendor.o(onRemove),
@@ -270,7 +270,7 @@ const _sfc_main = {
         K: common_vendor.p({
           action: action.value
         }),
-        L: common_vendor.sr(form1, "a6b06614-0", {
+        L: common_vendor.sr(form1, "6fae5696-0", {
           "k": "form1"
         }),
         M: common_vendor.p({
@@ -284,5 +284,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/pages/write/write.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/pages/write/write.vue"]]);
 wx.createPage(MiniProgramPage);

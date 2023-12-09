@@ -143,7 +143,7 @@ const _sfc_main = {
         p: common_vendor.p({
           ["custom-style"]: customStyle1
         }),
-        q: common_vendor.sr(form1, "347a9496-0", {
+        q: common_vendor.sr(form1, "a2beddd6-0", {
           "k": "form1"
         }),
         r: common_vendor.p({
@@ -153,5 +153,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/pages/register/register.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/pages/register/register.vue"]]);
 wx.createPage(MiniProgramPage);

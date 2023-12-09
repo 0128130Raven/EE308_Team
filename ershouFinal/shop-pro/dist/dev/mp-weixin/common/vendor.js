@@ -1214,15 +1214,15 @@ const onLocaleChange = (fn) => {
 if (typeof global !== "undefined") {
   global.getLocale = getLocale;
 }
-const UUID_KEY = "__DC_STAT_UUID";
+const UUID_KEY$1 = "__DC_STAT_UUID";
 let deviceId;
 function useDeviceId(global2 = wx) {
   return function addDeviceId(_, toRes) {
-    deviceId = deviceId || global2.getStorageSync(UUID_KEY);
+    deviceId = deviceId || global2.getStorageSync(UUID_KEY$1);
     if (!deviceId) {
       deviceId = Date.now() + "" + Math.floor(Math.random() * 1e7);
       wx.setStorage({
-        key: UUID_KEY,
+        key: UUID_KEY$1,
         data: deviceId
       });
     }
@@ -1257,7 +1257,7 @@ function populateParameters(fromRes, toRes) {
   let _SDKVersion = SDKVersion;
   const hostLanguage = language.replace(/_/g, "-");
   const parameters = {
-    appId: "",
+    appId: "__UNI__0030905",
     appName: "二手交易程序",
     appVersion: "1.0.0",
     appVersionCode: "100",
@@ -1401,7 +1401,7 @@ const getAppBaseInfo = {
       hostName: _hostName,
       hostSDKVersion: SDKVersion,
       hostTheme: theme,
-      appId: "",
+      appId: "__UNI__0030905",
       appName: "二手交易程序",
       appVersion: "1.0.0",
       appVersionCode: "100",
@@ -6889,6 +6889,1078 @@ const createSubpackageApp = initCreateSubpackageApp();
   wx.createPluginApp = global.createPluginApp = createPluginApp;
   wx.createSubpackageApp = global.createSubpackageApp = createSubpackageApp;
 }
+const sys = index.getSystemInfoSync();
+const STAT_VERSION = "3.7.11";
+const STAT_URL = "https://tongji.dcloud.io/uni/stat";
+const STAT_H5_URL = "https://tongji.dcloud.io/uni/stat.gif";
+const PAGE_PVER_TIME = 1800;
+const APP_PVER_TIME = 300;
+const OPERATING_TIME = 10;
+const DIFF_TIME = 60 * 1e3 * 60 * 24;
+const appid = "__UNI__0030905";
+const dbSet = (name, value) => {
+  let data = index.getStorageSync("$$STAT__DBDATA:" + appid) || {};
+  if (!data) {
+    data = {};
+  }
+  data[name] = value;
+  index.setStorageSync("$$STAT__DBDATA:" + appid, data);
+};
+const dbGet = (name) => {
+  let data = index.getStorageSync("$$STAT__DBDATA:" + appid) || {};
+  if (!data[name]) {
+    let dbdata = index.getStorageSync("$$STAT__DBDATA:" + appid);
+    if (!dbdata) {
+      dbdata = {};
+    }
+    if (!dbdata[name]) {
+      return void 0;
+    }
+    data[name] = dbdata[name];
+  }
+  return data[name];
+};
+const dbRemove = (name) => {
+  let data = index.getStorageSync("$$STAT__DBDATA:" + appid) || {};
+  if (data[name]) {
+    delete data[name];
+    index.setStorageSync("$$STAT__DBDATA:" + appid, data);
+  } else {
+    data = index.getStorageSync("$$STAT__DBDATA:" + appid);
+    if (data[name]) {
+      delete data[name];
+      index.setStorageSync("$$STAT__DBDATA:" + appid, data);
+    }
+  }
+};
+const uniStatisticsConfig = { "enable": true };
+let statConfig = {
+  appid: "__UNI__0030905"
+};
+let titleJsons = {};
+titleJsons = { "pages/login/login": "登录", "pages/register/register": "注册", "pages/index/index": "首页", "pages/write/write": "发布", "pages/unused/unused": "闲置", "pages/buy/buy": "求购", "pages/mine/mine": "我的", "pages/unused/unused_detail": "闲置详情", "pages/buy_detail/buy_detail": "求购详情", "pages/my_unused/my_unused": "我的闲置", "pages/my_buy/my_buy": "我的求购", "pages/order/my_order": "购买订单", "pages/order/sell_order": "出售订单", "pages/cart/cart": "购物车", "pages/update_password/update_password": "密码修改", "pages/my_collect/my_collect": "我的收藏", "pages/unused/unused_edit": "编辑闲置", "pages/order/order_detail": "查看订单", "pages/look_unused/look_unused": "查看闲置", "pages/look_buy/look_buy": "查看求购", "pages/buy_edit/buy_edit": "编辑求购", "pages/user_info/user_info": "修改信息", "pages/forget_password/forget_password": "忘记密码" };
+const UUID_KEY = "__DC_STAT_UUID";
+const UUID_VALUE = "__DC_UUID_VALUE";
+function getUuid() {
+  let uuid = "";
+  if (get_platform_name() === "n") {
+    try {
+      uuid = plus.runtime.getDCloudId();
+    } catch (e2) {
+      uuid = "";
+    }
+    return uuid;
+  }
+  try {
+    uuid = index.getStorageSync(UUID_KEY);
+  } catch (e2) {
+    uuid = UUID_VALUE;
+  }
+  if (!uuid) {
+    uuid = Date.now() + "" + Math.floor(Math.random() * 1e7);
+    try {
+      index.setStorageSync(UUID_KEY, uuid);
+    } catch (e2) {
+      index.setStorageSync(UUID_KEY, UUID_VALUE);
+    }
+  }
+  return uuid;
+}
+const get_uuid = (statData2) => {
+  return sys.deviceId || getUuid();
+};
+const get_odid = (statData2) => {
+  let odid = "";
+  if (get_platform_name() === "n") {
+    try {
+      odid = plus.device.uuid;
+    } catch (e2) {
+      odid = "";
+    }
+    return odid;
+  }
+  return sys.deviceId || getUuid();
+};
+const stat_config = statConfig;
+const get_sgin = (statData2) => {
+  let arr = Object.keys(statData2);
+  let sortArr = arr.sort();
+  let sgin = {};
+  let sginStr = "";
+  for (var i in sortArr) {
+    sgin[sortArr[i]] = statData2[sortArr[i]];
+    sginStr += sortArr[i] + "=" + statData2[sortArr[i]] + "&";
+  }
+  return {
+    sign: "",
+    options: sginStr.substr(0, sginStr.length - 1)
+  };
+};
+const get_encodeURIComponent_options = (statData2) => {
+  let data = {};
+  for (let prop in statData2) {
+    data[prop] = encodeURIComponent(statData2[prop]);
+  }
+  return data;
+};
+const get_platform_name = () => {
+  const aliArr = ["y", "a", "p", "mp-ali"];
+  const platformList = {
+    app: "n",
+    "app-plus": "n",
+    h5: "h5",
+    "mp-weixin": "wx",
+    [aliArr.reverse().join("")]: "ali",
+    "mp-baidu": "bd",
+    "mp-toutiao": "tt",
+    "mp-qq": "qq",
+    "quickapp-native": "qn",
+    "mp-kuaishou": "ks",
+    "mp-lark": "lark",
+    "quickapp-webview": "qw"
+  };
+  if (platformList["mp-weixin"] === "ali") {
+    if (my && my.env) {
+      const clientName = my.env.clientName;
+      if (clientName === "ap")
+        return "ali";
+      if (clientName === "dingtalk")
+        return "dt";
+    }
+  }
+  return platformList["mp-weixin"];
+};
+const get_pack_name = () => {
+  let packName = "";
+  if (get_platform_name() === "wx" || get_platform_name() === "qq") {
+    if (index.canIUse("getAccountInfoSync")) {
+      packName = index.getAccountInfoSync().miniProgram.appId || "";
+    }
+  }
+  if (get_platform_name() === "n")
+    ;
+  return packName;
+};
+const get_version = () => {
+  return get_platform_name() === "n" ? plus.runtime.version : "";
+};
+const get_channel = () => {
+  const platformName = get_platform_name();
+  let channel = "";
+  if (platformName === "n") {
+    channel = plus.runtime.channel;
+  }
+  return channel;
+};
+const get_scene = (options) => {
+  const platformName = get_platform_name();
+  let scene = "";
+  if (options) {
+    return options;
+  }
+  if (platformName === "wx") {
+    scene = index.getLaunchOptionsSync().scene;
+  }
+  return scene;
+};
+const get_splicing = (data) => {
+  let str = "";
+  for (var i in data) {
+    str += i + "=" + data[i] + "&";
+  }
+  return str.substr(0, str.length - 1);
+};
+const get_route$1 = (pageVm) => {
+  let _self = pageVm || get_page_vm();
+  if (get_platform_name() === "bd") {
+    let mp_route = _self.$mp && _self.$mp.page && _self.$mp.page.is;
+    let scope_route = _self.$scope && _self.$scope.is;
+    return mp_route || scope_route || "";
+  } else {
+    return _self.route || _self.$scope && _self.$scope.route || _self.$mp && _self.$mp.page.route;
+  }
+};
+const get_page_route = (pageVm) => {
+  let page = pageVm && (pageVm.$page || pageVm.$scope && pageVm.$scope.$page);
+  let lastPageRoute = index.getStorageSync("_STAT_LAST_PAGE_ROUTE");
+  if (!page)
+    return lastPageRoute || "";
+  return page.fullPath === "/" ? page.route : page.fullPath || page.route;
+};
+const get_page_vm = () => {
+  let pages = getCurrentPages();
+  let $page = pages[pages.length - 1];
+  if (!$page)
+    return null;
+  return $page.$vm;
+};
+const get_page_types = (self) => {
+  if (self.mpType === "page" || self.$mpType === "page" || self.$mp && self.$mp.mpType === "page" || self.$options.mpType === "page") {
+    return "page";
+  }
+  if (self.mpType === "app" || self.$mpType === "app" || self.$mp && self.$mp.mpType === "app" || self.$options.mpType === "app") {
+    return "app";
+  }
+  return null;
+};
+const handle_data = (statData2) => {
+  let firstArr = [];
+  let contentArr = [];
+  let lastArr = [];
+  for (let i in statData2) {
+    const rd = statData2[i];
+    rd.forEach((elm) => {
+      let newData = "";
+      {
+        newData = get_splicing(elm);
+      }
+      if (i === 0) {
+        firstArr.push(newData);
+      } else if (i === 3) {
+        lastArr.push(newData);
+      } else {
+        contentArr.push(newData);
+      }
+    });
+  }
+  firstArr.push(...contentArr, ...lastArr);
+  return JSON.stringify(firstArr);
+};
+const calibration = (eventName, options) => {
+  if (!eventName) {
+    console.error(`uni.report Missing [eventName] parameter`);
+    return true;
+  }
+  if (typeof eventName !== "string") {
+    console.error(
+      `uni.report [eventName] Parameter type error, it can only be of type String`
+    );
+    return true;
+  }
+  if (eventName.length > 255) {
+    console.error(
+      `uni.report [eventName] Parameter length cannot be greater than 255`
+    );
+    return true;
+  }
+  if (typeof options !== "string" && typeof options !== "object") {
+    console.error(
+      "uni.report [options] Parameter type error, Only supports String or Object type"
+    );
+    return true;
+  }
+  if (typeof options === "string" && options.length > 255) {
+    console.error(
+      `uni.report [options] Parameter length cannot be greater than 255`
+    );
+    return true;
+  }
+  if (eventName === "title" && typeof options !== "string") {
+    console.error(
+      `uni.report [eventName] When the parameter is title, the [options] parameter can only be of type String`
+    );
+    return true;
+  }
+};
+const get_page_name = (routepath) => {
+  return titleJsons && titleJsons[routepath] || "";
+};
+const Report_Data_Time = "Report_Data_Time";
+const Report_Status = "Report_Status";
+const is_report_data = () => {
+  return new Promise((resolve2, reject) => {
+    let start_time = "";
+    let end_time = new Date().getTime();
+    let diff_time = DIFF_TIME;
+    let report_status = 1;
+    try {
+      start_time = index.getStorageSync(Report_Data_Time);
+      report_status = index.getStorageSync(Report_Status);
+    } catch (e2) {
+      start_time = "";
+      report_status = 1;
+    }
+    if (report_status === "") {
+      requestData(({ enable }) => {
+        index.setStorageSync(Report_Data_Time, end_time);
+        index.setStorageSync(Report_Status, enable);
+        if (enable === 1) {
+          resolve2();
+        }
+      });
+      return;
+    }
+    if (report_status === 1) {
+      resolve2();
+    }
+    if (!start_time) {
+      index.setStorageSync(Report_Data_Time, end_time);
+      start_time = end_time;
+    }
+    if (end_time - start_time > diff_time) {
+      requestData(({ enable }) => {
+        index.setStorageSync(Report_Data_Time, end_time);
+        index.setStorageSync(Report_Status, enable);
+      });
+    }
+  });
+};
+const requestData = (done) => {
+  const appid2 = "__UNI__0030905";
+  let formData = {
+    usv: STAT_VERSION,
+    conf: JSON.stringify({
+      ak: appid2
+    })
+  };
+  index.request({
+    url: STAT_URL,
+    method: "GET",
+    data: formData,
+    success: (res) => {
+      const { data } = res;
+      if (data.ret === 0) {
+        typeof done === "function" && done({
+          enable: data.enable
+        });
+      }
+    },
+    fail: (e2) => {
+      let report_status_code = 1;
+      try {
+        report_status_code = index.getStorageSync(Report_Status);
+      } catch (e3) {
+        report_status_code = 1;
+      }
+      if (report_status_code === "") {
+        report_status_code = 1;
+      }
+      typeof done === "function" && done({
+        enable: report_status_code
+      });
+    }
+  });
+};
+const get_report_Interval = (defaultTime) => {
+  let time = uniStatisticsConfig.reportInterval;
+  if (Number(time) === 0)
+    return 0;
+  time = time || defaultTime;
+  let reg = /(^[1-9]\d*$)/;
+  if (!reg.test(time))
+    return defaultTime;
+  return Number(time);
+};
+const is_push_clientid = () => {
+  if (uniStatisticsConfig.collectItems) {
+    const ClientID = uniStatisticsConfig.collectItems.uniPushClientID;
+    return typeof ClientID === "boolean" ? ClientID : false;
+  }
+  return false;
+};
+const FIRST_VISIT_TIME_KEY = "__first__visit__time";
+const LAST_VISIT_TIME_KEY = "__last__visit__time";
+const get_time = () => {
+  return parseInt(new Date().getTime() / 1e3);
+};
+const get_first_visit_time = () => {
+  const timeStorge = dbGet(FIRST_VISIT_TIME_KEY);
+  let time = 0;
+  if (timeStorge) {
+    time = timeStorge;
+  } else {
+    time = get_time();
+    dbSet(FIRST_VISIT_TIME_KEY, time);
+    dbRemove(LAST_VISIT_TIME_KEY);
+  }
+  return time;
+};
+const get_last_visit_time = () => {
+  const timeStorge = dbGet(LAST_VISIT_TIME_KEY);
+  let time = 0;
+  if (timeStorge) {
+    time = timeStorge;
+  }
+  dbSet(LAST_VISIT_TIME_KEY, get_time());
+  return time;
+};
+const PAGE_RESIDENCE_TIME = "__page__residence__time";
+let First_Page_Residence_Time = 0;
+let Last_Page_Residence_Time = 0;
+const set_page_residence_time = () => {
+  First_Page_Residence_Time = get_time();
+  dbSet(PAGE_RESIDENCE_TIME, First_Page_Residence_Time);
+  return First_Page_Residence_Time;
+};
+const get_page_residence_time = () => {
+  Last_Page_Residence_Time = get_time();
+  First_Page_Residence_Time = dbGet(PAGE_RESIDENCE_TIME);
+  return Last_Page_Residence_Time - First_Page_Residence_Time;
+};
+const TOTAL_VISIT_COUNT = "__total__visit__count";
+const get_total_visit_count = () => {
+  const timeStorge = dbGet(TOTAL_VISIT_COUNT);
+  let count = 1;
+  if (timeStorge) {
+    count = timeStorge;
+    count++;
+  }
+  dbSet(TOTAL_VISIT_COUNT, count);
+  return count;
+};
+const FIRST_TIME = "__first_time";
+const set_first_time = () => {
+  let time = get_time();
+  const timeStorge = dbSet(FIRST_TIME, time);
+  return timeStorge;
+};
+const get_residence_time = (type) => {
+  let residenceTime = 0;
+  const first_time = dbGet(FIRST_TIME);
+  const last_time = get_time();
+  if (first_time !== 0) {
+    residenceTime = last_time - first_time;
+  }
+  residenceTime = residenceTime < 1 ? 1 : residenceTime;
+  if (type === "app") {
+    let overtime = residenceTime > APP_PVER_TIME ? true : false;
+    return {
+      residenceTime,
+      overtime
+    };
+  }
+  if (type === "page") {
+    let overtime = residenceTime > PAGE_PVER_TIME ? true : false;
+    return {
+      residenceTime,
+      overtime
+    };
+  }
+  return {
+    residenceTime
+  };
+};
+const eport_Interval = get_report_Interval(OPERATING_TIME);
+let statData = {
+  uuid: get_uuid(),
+  // 设备标识
+  ak: stat_config.appid,
+  // uni-app 应用 Appid
+  p: sys.platform === "android" ? "a" : "i",
+  // 手机系统
+  ut: get_platform_name(),
+  // 平台类型
+  mpn: get_pack_name(),
+  // 原生平台包名、小程序 appid
+  usv: STAT_VERSION,
+  // 统计 sdk 版本
+  v: get_version(),
+  // 应用版本，仅app
+  ch: get_channel(),
+  // 渠道信息
+  cn: "",
+  // 国家
+  pn: "",
+  // 省份
+  ct: "",
+  // 城市
+  t: get_time(),
+  // 上报数据时的时间戳
+  tt: "",
+  brand: sys.brand || "",
+  // 手机品牌
+  md: sys.model,
+  // 手机型号
+  sv: sys.system.replace(/(Android|iOS)\s/, ""),
+  // 手机系统版本
+  mpsdk: sys.SDKVersion || "",
+  // x程序 sdk version
+  mpv: sys.version || "",
+  // 小程序平台版本 ，如微信、支付宝
+  lang: sys.language,
+  // 语言
+  pr: sys.pixelRatio,
+  // pixelRatio 设备像素比
+  ww: sys.windowWidth,
+  // windowWidth 可使用窗口宽度
+  wh: sys.windowHeight,
+  // windowHeight 可使用窗口高度
+  sw: sys.screenWidth,
+  // screenWidth 屏幕宽度
+  sh: sys.screenHeight
+  // screenHeight 屏幕高度
+};
+class Report {
+  constructor() {
+    this.self = "";
+    this.__licationShow = false;
+    this.__licationHide = false;
+    this.statData = statData;
+    this._navigationBarTitle = {
+      config: "",
+      page: "",
+      report: "",
+      lt: ""
+    };
+    this._query = {};
+    let registerInterceptor = typeof index.addInterceptor === "function";
+    if (registerInterceptor) {
+      this.addInterceptorInit();
+      this.interceptLogin();
+      this.interceptShare(true);
+      this.interceptRequestPayment();
+    }
+  }
+  addInterceptorInit() {
+    let self = this;
+    index.addInterceptor("setNavigationBarTitle", {
+      invoke(args) {
+        self._navigationBarTitle.page = args.title;
+      }
+    });
+  }
+  interceptLogin() {
+    let self = this;
+    index.addInterceptor("login", {
+      complete() {
+        self._login();
+      }
+    });
+  }
+  interceptShare(type) {
+    let self = this;
+    if (!type) {
+      self._share();
+      return;
+    }
+    index.addInterceptor("share", {
+      success() {
+        self._share();
+      },
+      fail() {
+        self._share();
+      }
+    });
+  }
+  interceptRequestPayment() {
+    let self = this;
+    index.addInterceptor("requestPayment", {
+      success() {
+        self._payment("pay_success");
+      },
+      fail() {
+        self._payment("pay_fail");
+      }
+    });
+  }
+  _login() {
+    this.sendEventRequest(
+      {
+        key: "login"
+      },
+      0
+    );
+  }
+  _share() {
+    this.sendEventRequest(
+      {
+        key: "share"
+      },
+      0
+    );
+  }
+  _payment(key) {
+    this.sendEventRequest(
+      {
+        key
+      },
+      0
+    );
+  }
+  /**
+   * 进入应用触发
+   */
+  applicationShow() {
+    if (this.__licationHide) {
+      const time = get_residence_time("app");
+      if (time.overtime) {
+        let lastPageRoute = index.getStorageSync("_STAT_LAST_PAGE_ROUTE");
+        let options = {
+          path: lastPageRoute,
+          scene: this.statData.sc,
+          cst: 2
+        };
+        this.sendReportRequest(options);
+      }
+      this.__licationHide = false;
+    }
+  }
+  /**
+   * 离开应用触发
+   * @param {Object} self
+   * @param {Object} type
+   */
+  applicationHide(self, type) {
+    if (!self) {
+      self = get_page_vm();
+    }
+    this.__licationHide = true;
+    const time = get_residence_time();
+    const route = get_page_route(self);
+    index.setStorageSync("_STAT_LAST_PAGE_ROUTE", route);
+    this.sendHideRequest(
+      {
+        urlref: route,
+        urlref_ts: time.residenceTime
+      },
+      type
+    );
+    set_first_time();
+  }
+  /**
+   * 进入页面触发
+   */
+  pageShow(self) {
+    this._navigationBarTitle = {
+      config: "",
+      page: "",
+      report: "",
+      lt: ""
+    };
+    const route = get_page_route(self);
+    const routepath = get_route$1(self);
+    this._navigationBarTitle.config = get_page_name(routepath);
+    if (this.__licationShow) {
+      set_first_time();
+      index.setStorageSync("_STAT_LAST_PAGE_ROUTE", route);
+      this.__licationShow = false;
+      return;
+    }
+    const time = get_residence_time("page");
+    if (time.overtime) {
+      let options = {
+        path: route,
+        scene: this.statData.sc,
+        cst: 3
+      };
+      this.sendReportRequest(options);
+    }
+    set_first_time();
+  }
+  /**
+   * 离开页面触发
+   */
+  pageHide(self) {
+    if (!this.__licationHide) {
+      const time = get_residence_time("page");
+      let route = get_page_route(self);
+      let lastPageRoute = index.getStorageSync("_STAT_LAST_PAGE_ROUTE");
+      if (!lastPageRoute) {
+        lastPageRoute = route;
+      }
+      index.setStorageSync("_STAT_LAST_PAGE_ROUTE", route);
+      this.sendPageRequest({
+        url: route,
+        urlref: lastPageRoute,
+        urlref_ts: time.residenceTime
+      });
+      return;
+    }
+  }
+  /**
+   * 发送请求,应用维度上报
+   * @param {Object} options 页面信息
+   * @param {Boolean} type 是否立即上报
+   */
+  sendReportRequest(options, type) {
+    this._navigationBarTitle.lt = "1";
+    this._navigationBarTitle.config = get_page_name(options.path);
+    let is_opt = options.query && JSON.stringify(options.query) !== "{}";
+    let query = is_opt ? "?" + JSON.stringify(options.query) : "";
+    const last_time = get_last_visit_time();
+    if (last_time !== 0 || !last_time) {
+      const odid = get_odid();
+      {
+        this.statData.odid = odid;
+      }
+    }
+    Object.assign(this.statData, {
+      lt: "1",
+      url: options.path + query || "",
+      t: get_time(),
+      sc: get_scene(options.scene),
+      fvts: get_first_visit_time(),
+      lvts: last_time,
+      tvc: get_total_visit_count(),
+      // create session type  上报类型 ，1 应用进入 2.后台30min进入 3.页面30min进入
+      cst: options.cst || 1
+    });
+    if (get_platform_name() === "n") {
+      this.getProperty(type);
+    } else {
+      this.getNetworkInfo(type);
+    }
+  }
+  /**
+   * 发送请求,页面维度上报
+   * @param {Object} opt
+   */
+  sendPageRequest(opt) {
+    let { url, urlref, urlref_ts } = opt;
+    this._navigationBarTitle.lt = "11";
+    let options = {
+      ak: this.statData.ak,
+      uuid: this.statData.uuid,
+      p: this.statData.p,
+      lt: "11",
+      ut: this.statData.ut,
+      url,
+      tt: this.statData.tt,
+      urlref,
+      urlref_ts,
+      ch: this.statData.ch,
+      usv: this.statData.usv,
+      t: get_time()
+    };
+    this.request(options);
+  }
+  /**
+   * 进入后台上报数据
+   * @param {Object} opt
+   * @param {Object} type
+   */
+  sendHideRequest(opt, type) {
+    let { urlref, urlref_ts } = opt;
+    let options = {
+      ak: this.statData.ak,
+      uuid: this.statData.uuid,
+      p: this.statData.p,
+      lt: "3",
+      ut: this.statData.ut,
+      urlref,
+      urlref_ts,
+      ch: this.statData.ch,
+      usv: this.statData.usv,
+      t: get_time()
+    };
+    this.request(options, type);
+  }
+  /**
+   * 自定义事件上报
+   */
+  sendEventRequest({ key = "", value = "" } = {}) {
+    let routepath = "";
+    try {
+      routepath = get_route$1();
+    } catch (error) {
+      const launch_options = dbGet("__launch_options");
+      routepath = launch_options.path;
+    }
+    this._navigationBarTitle.config = get_page_name(routepath);
+    this._navigationBarTitle.lt = "21";
+    let options = {
+      ak: this.statData.ak,
+      uuid: this.statData.uuid,
+      p: this.statData.p,
+      lt: "21",
+      ut: this.statData.ut,
+      url: routepath,
+      ch: this.statData.ch,
+      e_n: key,
+      e_v: typeof value === "object" ? JSON.stringify(value) : value.toString(),
+      usv: this.statData.usv,
+      t: get_time()
+    };
+    this.request(options);
+  }
+  sendPushRequest(options, cid2) {
+    let time = get_time();
+    const statData2 = {
+      lt: "101",
+      cid: cid2,
+      t: time,
+      ut: this.statData.ut
+    };
+    const stat_data = handle_data({
+      101: [statData2]
+    });
+    let optionsData = {
+      usv: STAT_VERSION,
+      //统计 SDK 版本号
+      t: time,
+      //发送请求时的时间戮
+      requests: stat_data
+    };
+    {
+      if (statData2.ut === "h5") {
+        this.imageRequest(optionsData);
+        return;
+      }
+    }
+    if (get_platform_name() === "n" && this.statData.p === "a") {
+      setTimeout(() => {
+        this.sendRequest(optionsData);
+      }, 200);
+      return;
+    }
+    this.sendRequest(optionsData);
+  }
+  /**
+   * 获取wgt资源版本
+   */
+  getProperty(type) {
+    plus.runtime.getProperty(plus.runtime.appid, (wgtinfo) => {
+      this.statData.v = wgtinfo.version || "";
+      this.getNetworkInfo(type);
+    });
+  }
+  /**
+   * 获取网络信息
+   */
+  getNetworkInfo(type) {
+    index.getNetworkType({
+      success: (result) => {
+        this.statData.net = result.networkType;
+        this.getLocation(type);
+      }
+    });
+  }
+  /**
+   * 获取位置信息
+   */
+  getLocation(type) {
+    if (stat_config.getLocation) {
+      index.getLocation({
+        type: "wgs84",
+        geocode: true,
+        success: (result) => {
+          if (result.address) {
+            this.statData.cn = result.address.country;
+            this.statData.pn = result.address.province;
+            this.statData.ct = result.address.city;
+          }
+          this.statData.lat = result.latitude;
+          this.statData.lng = result.longitude;
+          this.request(this.statData, type);
+        }
+      });
+    } else {
+      this.statData.lat = 0;
+      this.statData.lng = 0;
+      this.request(this.statData, type);
+    }
+  }
+  /**
+   * 发送请求
+   * @param {Object} data 上报数据
+   * @param {Object} type 类型
+   */
+  request(data, type) {
+    let time = get_time();
+    const title = this._navigationBarTitle;
+    Object.assign(data, {
+      ttn: title.page,
+      ttpj: title.config,
+      ttc: title.report
+    });
+    let uniStatData = dbGet("__UNI__STAT__DATA") || {};
+    if (!uniStatData[data.lt]) {
+      uniStatData[data.lt] = [];
+    }
+    uniStatData[data.lt].push(data);
+    dbSet("__UNI__STAT__DATA", uniStatData);
+    let page_residence_time = get_page_residence_time();
+    if (page_residence_time < eport_Interval && !type)
+      return;
+    set_page_residence_time();
+    const stat_data = handle_data(uniStatData);
+    let optionsData = {
+      usv: STAT_VERSION,
+      //统计 SDK 版本号
+      t: time,
+      //发送请求时的时间戮
+      requests: stat_data
+    };
+    dbRemove("__UNI__STAT__DATA");
+    {
+      if (data.ut === "h5") {
+        this.imageRequest(optionsData);
+        return;
+      }
+    }
+    if (get_platform_name() === "n" && this.statData.p === "a") {
+      setTimeout(() => {
+        this.sendRequest(optionsData);
+      }, 200);
+      return;
+    }
+    this.sendRequest(optionsData);
+  }
+  getIsReportData() {
+    return is_report_data();
+  }
+  /**
+   * 数据上报
+   * @param {Object} optionsData 需要上报的数据
+   */
+  sendRequest(optionsData) {
+    {
+      this.getIsReportData().then(() => {
+        index.request({
+          url: STAT_URL,
+          method: "POST",
+          data: optionsData,
+          success: () => {
+          },
+          fail: (e2) => {
+            if (++this._retry < 3) {
+              setTimeout(() => {
+                this.sendRequest(optionsData);
+              }, 1e3);
+            }
+          }
+        });
+      });
+    }
+  }
+  /**
+   * h5 请求
+   */
+  imageRequest(data) {
+    this.getIsReportData().then(() => {
+      let image = new Image();
+      let options = get_sgin(get_encodeURIComponent_options(data)).options;
+      image.src = STAT_H5_URL + "?" + options;
+    });
+  }
+  sendEvent(key, value) {
+    if (calibration(key, value))
+      return;
+    if (key === "title") {
+      this._navigationBarTitle.report = value;
+      return;
+    }
+    this.sendEventRequest(
+      {
+        key,
+        value: typeof value === "object" ? JSON.stringify(value) : value
+      },
+      1
+    );
+  }
+}
+class Stat extends Report {
+  static getInstance() {
+    if (!index.__stat_instance) {
+      index.__stat_instance = new Stat();
+    }
+    return index.__stat_instance;
+  }
+  constructor() {
+    super();
+  }
+  /**
+   * 获取推送id
+   */
+  pushEvent(options) {
+    const ClientID = is_push_clientid();
+    if (index.getPushClientId && ClientID) {
+      index.getPushClientId({
+        success: (res) => {
+          const cid2 = res.cid || false;
+          if (cid2) {
+            this.sendPushRequest(options, cid2);
+          }
+        }
+      });
+    }
+  }
+  /**
+   * 进入应用
+   * @param {Object} options 页面参数
+   * @param {Object} self	当前页面实例
+   */
+  launch(options, self) {
+    set_page_residence_time();
+    this.__licationShow = true;
+    dbSet("__launch_options", options);
+    options.cst = 1;
+    this.sendReportRequest(options, true);
+  }
+  load(options, self) {
+    this.self = self;
+    this._query = options;
+  }
+  appHide(self) {
+    this.applicationHide(self, true);
+  }
+  appShow(self) {
+    this.applicationShow(self);
+  }
+  show(self) {
+    this.self = self;
+    if (get_page_types(self) === "page") {
+      this.pageShow(self);
+    }
+    if (get_platform_name() === "h5" || get_platform_name() === "n") {
+      if (get_page_types(self) === "app") {
+        this.appShow();
+      }
+    }
+  }
+  hide(self) {
+    this.self = self;
+    if (get_page_types(self) === "page") {
+      this.pageHide(self);
+    }
+    if (get_platform_name() === "h5" || get_platform_name() === "n") {
+      if (get_page_types(self) === "app") {
+        this.appHide();
+      }
+    }
+  }
+  error(em) {
+    let emVal = "";
+    if (!em.message) {
+      emVal = JSON.stringify(em);
+    } else {
+      emVal = em.stack;
+    }
+    let route = "";
+    try {
+      route = get_route();
+    } catch (e2) {
+      route = "";
+    }
+    let options = {
+      ak: this.statData.ak,
+      uuid: this.statData.uuid,
+      p: this.statData.p,
+      lt: "31",
+      url: route,
+      ut: this.statData.ut,
+      ch: this.statData.ch,
+      mpsdk: this.statData.mpsdk,
+      mpv: this.statData.mpv,
+      v: this.statData.v,
+      em: emVal,
+      usv: this.statData.usv,
+      t: parseInt(new Date().getTime() / 1e3)
+    };
+    this.request(options);
+  }
+}
+var Stat$1 = Stat;
+Stat$1.getInstance();
+function main() {
+  {
+    {
+      index.report = function(type, options) {
+      };
+    }
+  }
+}
+main();
 const createHook = (lifecycle) => (hook, target = getCurrentInstance()) => {
   !isInSSRComponentSetup && injectHook(lifecycle, hook, target);
 };

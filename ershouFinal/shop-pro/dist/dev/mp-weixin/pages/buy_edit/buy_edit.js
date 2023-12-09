@@ -227,7 +227,7 @@ const _sfc_main = {
             a: common_vendor.t(item.name),
             b: common_vendor.o(radioChange, index),
             c: index,
-            d: "d40876d4-3-" + i0 + ",d40876d4-2",
+            d: "1021c115-3-" + i0 + ",1021c115-2",
             e: common_vendor.p({
               activeColor: "#FF7670",
               name: item.name,
@@ -339,7 +339,7 @@ const _sfc_main = {
           prop: "image",
           label: "图片:"
         }),
-        L: common_vendor.sr(imgRef, "d40876d4-24,d40876d4-0", {
+        L: common_vendor.sr(imgRef, "1021c115-24,1021c115-0", {
           "k": "imgRef"
         }),
         M: common_vendor.o(onRemove),
@@ -348,7 +348,7 @@ const _sfc_main = {
           ["file-list"]: fileList.value,
           action: action.value
         }),
-        P: common_vendor.sr(form1, "d40876d4-0", {
+        P: common_vendor.sr(form1, "1021c115-0", {
           "k": "form1"
         }),
         Q: common_vendor.p({
@@ -362,5 +362,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/pages/buy_edit/buy_edit.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/pages/buy_edit/buy_edit.vue"]]);
 wx.createPage(MiniProgramPage);

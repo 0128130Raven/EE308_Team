@@ -250,7 +250,7 @@ const _sfc_main = {
           prop: "image",
           label: "图片:"
         }),
-        G: common_vendor.sr(imgRef, "6d1e918c-22,6d1e918c-2", {
+        G: common_vendor.sr(imgRef, "37b824ed-22,37b824ed-2", {
           "k": "imgRef"
         }),
         H: common_vendor.p({
@@ -332,7 +332,7 @@ const _sfc_main = {
           label: "归还单号:"
         })
       } : {}, {
-        ad: common_vendor.sr(form1, "6d1e918c-2", {
+        ad: common_vendor.sr(form1, "37b824ed-2", {
           "k": "form1"
         }),
         ae: common_vendor.p({
@@ -342,5 +342,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/pages/order/order_detail.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/pages/order/order_detail.vue"]]);
 wx.createPage(MiniProgramPage);

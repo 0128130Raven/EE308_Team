@@ -126,7 +126,7 @@ const _sfc_main = {
             f: item.orderStatus === "3"
           }, item.orderStatus === "3" ? {
             g: common_vendor.o(($event) => evaluate(item), item.orderId),
-            h: "69fbe2a5-0-" + i0,
+            h: "16604e86-0-" + i0,
             i: common_vendor.p({
               type: "info"
             })
@@ -134,22 +134,22 @@ const _sfc_main = {
             j: item.orderStatus === "2"
           }, item.orderStatus === "2" ? {
             k: common_vendor.o(($event) => receive(item), item.orderId),
-            l: "69fbe2a5-1-" + i0,
+            l: "16604e86-1-" + i0,
             m: common_vendor.p({
               type: "info"
             })
           } : {}, {
             n: common_vendor.o(($event) => toLook(item), item.orderId),
-            o: "69fbe2a5-2-" + i0,
+            o: "16604e86-2-" + i0,
             p: item.orderStatus !== "2" && item.orderStatus !== "3" && item.orderStatus !== "4"
           }, item.orderStatus !== "2" && item.orderStatus !== "3" && item.orderStatus !== "4" ? {
             q: common_vendor.o(($event) => cancelBtn(item), item.orderId),
-            r: "69fbe2a5-3-" + i0,
+            r: "16604e86-3-" + i0,
             s: common_vendor.p({
               type: "error"
             })
           } : {}, {
-            t: "69fbe2a5-4-" + i0,
+            t: "16604e86-4-" + i0,
             v: item.orderId
           });
         }),
@@ -224,5 +224,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/pages/order/my_order.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/pages/order/my_order.vue"]]);
 wx.createPage(MiniProgramPage);

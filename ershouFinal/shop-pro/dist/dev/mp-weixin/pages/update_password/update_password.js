@@ -101,7 +101,7 @@ const _sfc_main = {
           label: "确定密码",
           prop: "confirm"
         }),
-        j: common_vendor.sr(form1, "3178005a-0", {
+        j: common_vendor.sr(form1, "174eb299-0", {
           "k": "form1"
         }),
         k: common_vendor.p({
@@ -116,5 +116,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/pages/update_password/update_password.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/pages/update_password/update_password.vue"]]);
 wx.createPage(MiniProgramPage);

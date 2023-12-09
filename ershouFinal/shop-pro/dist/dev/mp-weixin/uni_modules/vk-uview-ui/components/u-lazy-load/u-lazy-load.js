@@ -195,5 +195,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     s: common_vendor.n("u-lazy-item-" + $data.elIndex)
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-96ddb556"], ["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/uni_modules/vk-uview-ui/components/u-lazy-load/u-lazy-load.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-96ddb556"], ["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/uni_modules/vk-uview-ui/components/u-lazy-load/u-lazy-load.vue"]]);
 wx.createComponent(Component);

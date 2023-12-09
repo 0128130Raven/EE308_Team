@@ -104,5 +104,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     g: $props.show ? 1 : ""
   };
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-21280d7e"], ["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/uni_modules/vk-uview-ui/components/u-mask/u-mask.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-21280d7e"], ["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/uni_modules/vk-uview-ui/components/u-mask/u-mask.vue"]]);
 wx.createComponent(Component);

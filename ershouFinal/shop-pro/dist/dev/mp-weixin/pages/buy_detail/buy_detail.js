@@ -203,7 +203,7 @@ const _sfc_main = {
           label: "请输入举报原因",
           prop: "reason"
         }),
-        C: common_vendor.sr("form1", "03230094-7,03230094-6"),
+        C: common_vendor.sr("form1", "7797b696-7,7797b696-6"),
         D: common_vendor.p({
           ["label-width"]: "auto",
           model: reportModel
@@ -230,5 +230,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/pages/buy_detail/buy_detail.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/pages/buy_detail/buy_detail.vue"]]);
 wx.createPage(MiniProgramPage);

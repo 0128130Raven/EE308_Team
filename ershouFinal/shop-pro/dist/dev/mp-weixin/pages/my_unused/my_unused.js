@@ -112,11 +112,11 @@ const _sfc_main = {
           }, item.sellStatus === "0" ? common_vendor.e({
             k: item.status == "0"
           }, item.status == "0" ? {
-            l: "6546e74a-0-" + i0
+            l: "24407fee-0-" + i0
           } : {}, {
             m: item.status == "1"
           }, item.status == "1" ? {
-            n: "6546e74a-1-" + i0
+            n: "24407fee-1-" + i0
           } : {}, {
             o: common_vendor.o(($event) => upanddownBtn(item), item.goodsId)
           }) : {}, {
@@ -153,5 +153,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/pages/my_unused/my_unused.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/pages/my_unused/my_unused.vue"]]);
 wx.createPage(MiniProgramPage);

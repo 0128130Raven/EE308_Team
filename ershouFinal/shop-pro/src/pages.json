@@ -1,0 +1,239 @@
+{
+	"pages": [
+		{
+		    "path" : "pages/login/login",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "登录",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/register/register",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "注册",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+                "enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/write/write",
+			"style": {
+				"navigationBarTitleText": "发布",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/unused/unused",
+			"style": {
+				"navigationBarTitleText": "闲置",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/buy/buy",
+			"style": {
+				"navigationBarTitleText": "求购",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	    
+        
+        ,{
+            "path" : "pages/unused/unused_detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "闲置详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/buy_detail/buy_detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "求购详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my_unused/my_unused",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的闲置",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my_buy/my_buy",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的求购",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/order/my_order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "购买订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/order/sell_order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "出售订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+		,{
+		    "path" : "pages/cart/cart",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "购物车",
+		        "enablePullDownRefresh": true
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/update_password/update_password",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "密码修改",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my_collect/my_collect",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的收藏",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/unused/unused_edit",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "编辑闲置",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/order/order_detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查看订单",
+                "enablePullDownRefresh": false
+            }
+        }
+        ,{
+            "path" : "pages/look_unused/look_unused",
+            "style" :
+            {
+              "navigationBarTitleText": "查看闲置",
+              "enablePullDownRefresh": false
+            }
+          }
+        ,{
+            "path" : "pages/look_buy/look_buy",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查看求购",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/buy_edit/buy_edit",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "编辑求购",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user_info/user_info",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "修改信息",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/forget_password/forget_password",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "忘记密码",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "二手交易小程序",
+		"navigationBarBackgroundColor": "#FF7670",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#333333",
+		"selectedColor": "#FF7670",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/home.png",
+			"selectedIconPath": "static/home_select.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/unused/unused",
+			"iconPath": "static/unused.png",
+			"selectedIconPath": "static/unused_select.png",
+			"text": "闲置"
+		}, {
+			"pagePath": "pages/write/write",
+			"iconPath": "static/write.png",
+			"selectedIconPath": "static/write_select.png",
+			"text": "发布"
+		}, {
+			"pagePath": "pages/cart/cart",
+			"iconPath": "static/buy.png",
+			"selectedIconPath": "static/buy_select.png",
+			"text": "购物车"
+		}, {
+			"pagePath": "pages/mine/mine",
+			"iconPath": "static/mine.png",
+			"selectedIconPath": "static/mine_select.png",
+			"text": "我的"
+		}]
+	}
+}

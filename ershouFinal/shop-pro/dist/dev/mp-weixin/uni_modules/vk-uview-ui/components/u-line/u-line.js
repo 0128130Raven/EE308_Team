@@ -60,5 +60,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     a: common_vendor.s($options.lineStyle)
   };
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-96cc46f8"], ["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/uni_modules/vk-uview-ui/components/u-line/u-line.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-96cc46f8"], ["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/uni_modules/vk-uview-ui/components/u-line/u-line.vue"]]);
 wx.createComponent(Component);

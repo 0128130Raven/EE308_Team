@@ -122,11 +122,11 @@ const _sfc_main = {
             i: common_vendor.o(($event) => lookBtn(item), item.goodsId),
             j: item.status == "0"
           }, item.status == "0" ? {
-            k: "51a1b5d4-0-" + i0
+            k: "168d3915-0-" + i0
           } : {}, {
             l: item.status == "1"
           }, item.status == "1" ? {
-            m: "51a1b5d4-1-" + i0
+            m: "168d3915-1-" + i0
           } : {}, {
             n: common_vendor.o(($event) => upanddownBtn(item), item.goodsId),
             o: common_vendor.o(($event) => editBtn(item), item.goodsId),
@@ -161,5 +161,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/pages/my_buy/my_buy.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/pages/my_buy/my_buy.vue"]]);
 wx.createPage(MiniProgramPage);

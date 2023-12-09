@@ -115,7 +115,7 @@ const _sfc_main = {
             a: common_vendor.f(leftList, (item, index, i1) => {
               return common_vendor.e({
                 a: common_vendor.o(($event) => toDetail(item), index),
-                b: "71952fb6-3-" + i0 + "-" + i1 + ",71952fb6-2",
+                b: "9e197896-3-" + i0 + "-" + i1 + ",9e197896-2",
                 c: common_vendor.p({
                   threshold: "-450",
                   ["border-radius"]: "10",
@@ -135,7 +135,7 @@ const _sfc_main = {
         }, {
           name: "left",
           path: "h",
-          vueId: "71952fb6-2"
+          vueId: "9e197896-2"
         }),
         i: common_vendor.w(({
           rightList
@@ -144,7 +144,7 @@ const _sfc_main = {
             a: common_vendor.f(rightList, (item, index, i1) => {
               return common_vendor.e({
                 a: common_vendor.o(($event) => toDetail(item), index),
-                b: "71952fb6-4-" + i0 + "-" + i1 + ",71952fb6-2",
+                b: "9e197896-4-" + i0 + "-" + i1 + ",9e197896-2",
                 c: common_vendor.p({
                   threshold: "-450",
                   ["border-radius"]: "10",
@@ -164,9 +164,9 @@ const _sfc_main = {
         }, {
           name: "right",
           path: "i",
-          vueId: "71952fb6-2"
+          vueId: "9e197896-2"
         }),
-        j: common_vendor.sr(uWaterfall1, "71952fb6-2", {
+        j: common_vendor.sr(uWaterfall1, "9e197896-2", {
           "k": "uWaterfall1"
         }),
         k: common_vendor.o(($event) => flowList.value = $event),
@@ -177,5 +177,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/pages/unused/unused.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/pages/unused/unused.vue"]]);
 wx.createPage(MiniProgramPage);

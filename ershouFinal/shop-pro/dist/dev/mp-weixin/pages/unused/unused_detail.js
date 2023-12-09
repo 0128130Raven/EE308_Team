@@ -307,7 +307,7 @@ const _sfc_main = {
           }, item.userId === common_vendor.unref(currentUser) ? {
             e: common_vendor.o(($event) => removeEvaluate(item.id), item.id)
           } : {}, {
-            f: "b1d295ac-1-" + i0,
+            f: "3198f44b-1-" + i0,
             g: item.id
           });
         }),
@@ -388,7 +388,7 @@ const _sfc_main = {
           label: "请输入举报原因",
           prop: "reason"
         }),
-        Q: common_vendor.sr("form1", "b1d295ac-12,b1d295ac-11"),
+        Q: common_vendor.sr("form1", "3198f44b-12,3198f44b-11"),
         R: common_vendor.p({
           ["label-width"]: "auto",
           model: reportModel
@@ -441,5 +441,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/文件/软工/ershouFinal/ershouFinal/shop-pro/src/pages/unused/unused_detail.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/sq/Desktop/ershouFinal/ershouFinal/shop-pro/src/pages/unused/unused_detail.vue"]]);
 wx.createPage(MiniProgramPage);
