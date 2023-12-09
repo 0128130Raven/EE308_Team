@@ -201,12 +201,12 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "二手交易小程序",
-		"navigationBarBackgroundColor": "#FF7670",
+		"navigationBarBackgroundColor": "#f7d08d",
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
 		"color": "#333333",
-		"selectedColor": "#FF7670",
+		"selectedColor": "#f7d08d",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [{

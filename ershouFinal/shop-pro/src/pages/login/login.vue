@@ -2,10 +2,10 @@
 	<view class="u-p-t-40 u-p-r-60 u-p-b-30 u-p-l-60 logincontainer">
 		<u-avatar size="140" src="/static/user1.png" mode="circle"></u-avatar>
 		<u-form class="forms" :model="loginModel" ref="form1">
-			<u-form-item left-icon="account-fill" left-icon-style="font-size:24px;color:#FF7670;">
+			<u-form-item left-icon="account-fill" left-icon-style="font-size:24px;color:#f7d08d;">
 				<u-input placeholder="请输入账户" v-model="loginModel.username" />
 			</u-form-item>
-			<u-form-item left-icon="lock" left-icon-style="font-size:24px;color:#FF7670;">
+			<u-form-item left-icon="lock" left-icon-style="font-size:24px;color:#f7d08d;">
 				<u-input type="password" placeholder="请输入密码" v-model="loginModel.password" />
 			</u-form-item>
 			<view @click="toForget" class="passtext">
@@ -30,13 +30,13 @@
 	})
 	const customStyle1 = reactive({
 		marginTop: '40px',
-		background:'#FF7670',
+		background:'#f7d08d',
 		color:'#FFF',
 		width:'100%'
 	})
 	const customStyle2 = reactive({
 		marginTop: '35px',
-		// background:'#FF7670',
+		// background:' #f7d08d',
 		color:'#FFF',
 		width:'100%'
 	})
@@ -97,7 +97,7 @@
 	.passtext{
 		display: flex;
 		justify-content: flex-end;
-		color:#FF7670;
+		color:#f7d08d;
 		margin-top: 15px;
 	}
 </style>
